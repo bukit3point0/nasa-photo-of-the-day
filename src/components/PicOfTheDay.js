@@ -15,13 +15,13 @@ const NasaIMG = styled.img`
 
 const PicOfTheDay = props => {
 
-    const {img} = props
+    const {img, mediaType} = props
 
     return (
 
         <PicWrap>
             <NasaIMG src={"https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg"}/>
-            <h1>Pic of the Day</h1>
+            <h1>{mediaType==="image" ? "Image" : "Video"} of the Day</h1>
 
         </PicWrap>
 

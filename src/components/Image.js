@@ -9,11 +9,12 @@ const ImageWrap = styled.img`
 
 const Image = props => {
 
-    const {URL, title} = props
+    const {credit, URL, title} = props
 
     return (
         <div>
             <ImageWrap src={URL} alt={title}/>
+            <p>Credit {credit}</p>
         </div>
     )
 }

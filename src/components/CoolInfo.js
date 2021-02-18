@@ -5,7 +5,7 @@ import Explanation from './Explanation'
 
 const CoolInfo = props => {
 
-    const {mediaType, URL, expl, title} = props
+    const {credit, mediaType, URL, expl, title} = props
     
     return (
 
@@ -13,7 +13,7 @@ const CoolInfo = props => {
       
             {mediaType === "video" 
                 ? <Video URL={URL}/> 
-                : <Image URL={URL} title={title}/>}
+                : <Image credit={credit} URL={URL} title={title}/>}
             <Explanation explanation={expl}/>
       
         </div>

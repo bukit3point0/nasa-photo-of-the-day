@@ -23,6 +23,7 @@ function App() {
   const [nasaMedia, setNasaMedia] = useState()
   const [nasaTitle, setNasaTitle] = useState()
   const [nasaURL, setNasaURL] = useState()
+  const [credit, setCredit] = useState()
 
   useEffect(() => {
     axios.get("https://api.nasa.gov/planetary/apod?api_key=8DzApwJb2t9VBex2dKLyY7FqiPVYR8ImjjanFyVy")
@@ -33,6 +34,7 @@ function App() {
       setNasaMedia(res.data.media_type)
       setNasaTitle(res.data.title)
       setNasaURL(res.data.url)
+      setCredit(res.data.copyright)
     })
     .catch(err => {
       console.log(`How are you gonna call yourself a programmer and ${err} happens`)
@@ -50,9 +52,9 @@ function App() {
 
     <MainWrapper className="App">      
     
-      <PicOfTheDay img={nasaImg}/>
+      <PicOfTheDay img={nasaImg} mediaType={nasaMedia}/>
       <Title title={nasaTitle} date={nasaDate} />
-      <CoolInfo mediaType={nasaMedia} URL={nasaURL} expl={nasaExplanation} title={nasaTitle} />
+      <CoolInfo credit={credit} mediaType={nasaMedia} URL={nasaURL} expl={nasaExplanation} title={nasaTitle} />
     
     </MainWrapper>
 
